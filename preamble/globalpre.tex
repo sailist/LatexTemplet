@@ -2,26 +2,5 @@
 %! Date = 2019/8/23/0023
 
 
-\newenvironment{parabox}[1]{
-\begin{tcolorbox}[arc=0mm,fonttitle=\sffamily\bfseries,title=#1]
-}{\end{tcolorbox}}
-
-
-
-\newtcolorbox{baseqsbox}[2][]{
-%colback=red!5!white,
-%colframe=red!75!black,
-fonttitle=\bfseries\sffamily,
-colbacktitle=black!,
-enhanced,
-attach boxed title to top center={yshift=-3mm},
-title=#2,#1}
-
-\newenvironment{qsbox}[1]{
-\vspace{1ex}
-\begin{baseqsbox}{#1}
-    \vspace{1ex}
-}{\end{baseqsbox}}
-
 \newcommand{\sitem}{\subitem $-$}
 %\newcommand{\sitem}{{\setlength{\itemindent}{5pt} \subitem $-$ }}

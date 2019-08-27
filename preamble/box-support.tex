@@ -3,6 +3,8 @@
 \definecolor{langbacktitle}{RGB}{235,233,245}
 \definecolor{langtitle}{RGB}{177,177,177}
 \definecolor{langno}{RGB}{202,202,202}
+
+\tcbset{arc=1mm}
 \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{langno}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}%重定义行号的格式
 \newtcblisting{languagebox}[1][tex]{%参考自https://reishin.me/tmux/ 的代码框样式
     arc=1mm,
@@ -51,3 +53,33 @@
     colupper = todored,
     arc=0mm,colframe=white!,bottomrule=0mm,leftrule=2mm,toprule=0mm,rightrule=0mm
 }
+
+\definecolor{boxback}{RGB}{243,243,243}
+\newtcolorbox{qsbox}[1]{
+    before skip=1ex,after skip = 1ex,
+    colback=boxback,
+    colframe=red!75!black,
+    fonttitle=\bfseries\sffamily,
+    colbacktitle=black,
+    enhanced,
+    attach boxed title to top center={yshift=-3mm},
+    title=#1
+}
+
+
+\newtcolorbox{eqbox}{
+    colback=boxback,
+}
+% \newtcolorbox{mybox}{colback=red!5!white,
+% colframe=red!75!black}
+
+\newtcolorbox{parabox}[1]{
+    colback=boxback,fonttitle=\sffamily\bfseries,
+    title=para #1
+}
+
+\newtcolorbox{quotebox}{
+    colback=boxback,fonttitle=\sffamily\bfseries,
+    title=quote
+}
+    
