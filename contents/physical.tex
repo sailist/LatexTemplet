@@ -1,0 +1,81 @@
+\section{物理层}
+\subsection{基本定理}
+\subsubsection{傅里叶分析}
+19世纪早期，傅里叶证明了任何一个行为合理的周期函数，都可以表示成用正弦函数和余弦函数组成的无穷级数。
+
+\subsubsection{尼奎斯特定理}
+用来表示\textbf{有限带宽的无噪声信道}的最大数据传输速率：
+
+\begin{eqbox}
+    每秒B次采样下：
+    \begin{equation}
+        M=2B*log_2(V)  
+    \end{equation}
+    \tcblower
+    B：带宽；V：离散
+\end{eqbox}
+\subsubsection{香农定理}
+用来表示有限带宽的有噪声信道的最大数据传输速率：
+\begin{eqbox}
+    每秒B次采样下：
+    \begin{equation}
+        M=B*log_2(2*(1+S/N))  
+    \end{equation}
+    \tcblower
+    B：带宽；S/N：信噪比，即信号功率S和噪声功率N的比值
+    \tcblower
+    分贝（dB)：信噪比的对数表现形式，dB=10*log（10*S/N）
+\end{eqbox}
+
+\subsection{其他名词解释}
+\subsubsection{信号}
+可以简单的认为，信号就是一个频率
+\begin{figure}[H]
+    \centering
+    
+    \caption[width=0.8\textwidth]{fig/signal.png}
+    \caption{该图表示的信号中，信号只有高低电平两种，因此一个字符（symbol）只能表示一个bit（代表0或1}
+    \label{fig:信号}
+\end{figure}
+
+书中（P99）提到，利用有限带宽的一种更有效策略是使用两个以上的信号级别 。例如，采用 4 个电压级别，我们可以用单个符号（ symbol) 一次携带 2 个比特。只要接收器收到的信号强度足够大到能区分出信号的 4 个级别，这种方案就切实可行。此时信号变化的速率只是比特率的一半，因而减少了所需的带宽。 
+
+\subsubsection{波特率}
+信号改变的速率称为符号率（symbol rate），也就是波特率
+
+\subsection{数字调制}
+有线和无线信道运载模拟信号，模拟信号可表示成诸如连续变化的电压、光照强度或声音强度。为了发送数字信息，我们必须设法用模拟信号来表示比特。比特与代表它们的信号之间的转换过程称为\textbf{数字调制（ digit modulation ）}。 
+\subsubsection{基带传输}
+数字比特直接转换为信号有一些方案，即基带传输，即信号的传输占据传输介质上从零到最大值之间的全部频率，而最大频率则取决于信令速率。这是有线介质普遍使用的一种调制方法 
+
+基带传输的编码方案有：
+\begin{parabox}{不归零}
+    数字调制的最直接形式是用正电压表示 1 ，用负电压表示 0。对光纤而言，可用光的存
+在表示 1 ，没有光表示 0。这种编码方案称为不归零（ NRZ, Non-Return-to-Zero ）     
+\end{parabox}
+
+\begin{parabox}{曼彻斯特编码}
+
+    曼彻斯特编码
+\end{parabox}
+
+\begin{parabox}{差分曼彻斯特编码}
+    差分曼彻斯特编码
+\end{parabox}
+
+注意：两种曼彻斯特编码的1、0位的定义没有严格的要求，可以与上图表示的相反，只要在过程中完全一致即可
+
+
+\subsubsection{通带传输}
+考虑通过调节载波信号的幅值、相位或频率来运载比特的调制模式。这些转换方案导致了通带传输（ passband transmission），即信号占据了以载波信号频率为中心的一段频带。这是无线和光纤信道最常使用的调制方法，因为在这样的传输介质中只能在给定的频带中传输信号。 
+\subsubsection{多路复用}
+信道通常被多个信号共享（以便节约成本），这种信道的共享形式称为多路复用技术（ multiplexing ），多路复用技术可以通过几种不同的方式实现。我们将给出一些时分复用、频分复用和码分复用的多路复用方法。 
+分类：
+\begin{enumerate}
+    \item 时分（TDM，time division multiplexing）：一条物理信道按时间分成若干个时间片轮流地分配给多个信号使用。
+    \item 频分（FDM，frequency division multiplexing）：按频谱划分信道，不同频率的信号可以在同一信道内传输。
+    \item 波分（WDM，wavelength division multiplexing）：频分多路复用的一种，利用光纤信道的巨大带宽，同一光纤可以同时传输一组不同波长的光信号，并且不会互相影响。
+\end{enumerate}
+
+
+
