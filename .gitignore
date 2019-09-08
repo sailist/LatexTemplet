@@ -240,5 +240,9 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
-contents/*
-./*.tex
+
+contents/*.tex
+
+
+/*.tex
+!/main.tex
