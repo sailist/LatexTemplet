@@ -1,0 +1,45 @@
+%! Author = saili
+%! Date = 2019/8/23/0023
+
+% Preamble
+\documentclass{book}
+\input{preamble/packages.tex}
+\input{preamble/color.tex}
+\input{preamble/globalpre.tex}
+\input{preamble/format.tex}
+\input{preamble/box-support.tex}
+\input{preamble/line-support.tex}
+\input{preamble/localpre.tex}
+
+  
+
+%信息
+\title{计算机组成原理}
+\author{Sailist}
+
+\newcommand{\card}[1]{
+\ifthenelse{\equal{#1}{}}{}{NoEmpty}
+}
+\begin{document}
+    \renewcommand{\baselinestretch}{0.75}\normalsize
+    \tableofcontents
+    \newpage
+    \renewcommand{\baselinestretch}{1.3}\normalsize
+    \part{数学基础}
+    \input{contents/1.calculus}
+    \input{contents/2.probability-theory}
+    \input{contents/3.linear-algebra}
+
+    \part{机器学习}
+    如何解决监督学习问题？在给定足够的映射样本的情况下，学习将一个向量映射到另一个。
+    本质是用数据和模型去为现有的问题(existing problems)提供解决方法(solutions).
+    \input{contents/4.statistics-learn-method}%统计学习方法
+    \input{contents/5.feature-project}
+    \input{contents/6.deep-learn}
+    \input{contents/7.ml-experience}
+    \input{contents/8.ml-application}
+    \input{contents/9.others}
+    \input{contents/10.recommend-paper}
+
+\end{document}
+
