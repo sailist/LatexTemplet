@@ -242,7 +242,7 @@ TSWLatexianTemp*
 *.spl
 
 contents/*.tex
-
+contents/fig/*
 
 /*.tex
 !/main.tex
