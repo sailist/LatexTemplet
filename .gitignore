@@ -247,5 +247,6 @@ contents/*.tex
 /*.tex
 !/main.tex
 
-# out/*
-# outsrc/*
+out/*
+outsrc/*
+preamble/localpre.tex
