@@ -246,3 +246,6 @@ contents/*.tex
 
 /*.tex
 !/main.tex
+
+out/*
+outsrc/*
