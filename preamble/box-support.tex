@@ -83,3 +83,36 @@
     title=quote
 }
     
+
+
+% 2019年9月16日
+\newtcolorbox{texsepcode}{arc=0pt,bicolor,drop shadow,
+colback=codeback,left=0mm,boxsep=0mm,
+colbacklower=white,
+arc=0mm,
+colframe=codeback}
+
+\newtcolorbox{texsepbreakcode}{breakable,arc=0pt,bicolor,drop shadow,
+colback=codeback,left=0mm,boxsep=0mm,
+colbacklower=white,
+arc=0mm,
+colframe=codeback}
+\newcommand{\todo}[1]{\textcolor{red}{\large{TODO:#1}}}
+
+
+\newtcblisting{texcodenoshad}{
+arc=0mm,left=0mm,
+leftrule=0mm,
+externalize listing=example_listing,
+listing engine=minted,
+minted style=colorful,
+minted language=tex,
+minted options={fontsize=\small,breaklines,autogobble,numbersep=0mm},
+colback=codeback,
+colframe=codeback,
+listing only,
+left=0mm,enhanced,
+}
+
+
+
